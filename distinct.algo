@@ -8,15 +8,15 @@ VAR
     sum:=INTEGER=0
     a:=BOOLEAN;
 BEGIN
-    FOR i FROM 0 TO array1.length STEP step  DO
-        read(array1[i])
+    FOR i FROM 0 TO array1.length-1 STEP step  DO
+        read(array1[i]);
     END_FOR
-        FOR j FROM 0 TO array2.length STEP step  DO
-        read(array1[j])
+        FOR j FROM 0 TO array2.length-1 STEP step  DO
+        read(array1[j]);
     END_FOR
-FOR i FROM 0 TO array1[i].length STEP step  DO
+FOR i FROM 0 TO array1.length-1 STEP step  DO
     a=:=true;
-    FOR j FROM 0 TO array2[j].length STEP step  DO
+    FOR j FROM 0 TO array2.length-1 STEP step  DO
         IF (array1[i]=array2[j]) THEN
             a:=false;
         END_IF
@@ -25,9 +25,9 @@ FOR i FROM 0 TO array1[i].length STEP step  DO
         sum:=sum+array1[i];
     END_IF
 END_FOR
-FOR j FROM 0 TO array2[j] STEP step  DO
+FOR j FROM 0 TO array2[j].length-1 STEP step  DO
     a=:=true;
-    FOR i FROM 0 TO array1[i] STEP step  DO
+    FOR i FROM 0 TO array1[i].length-1 STEP step  DO
         IF (array2[j]=array1[i]) THEN
             a:=false;
         END_IF
@@ -59,15 +59,16 @@ VAR
     sum:=INTEGER=0
     a:=BOOLEAN;
 BEGIN
-    FOR i FROM 0 TO array1.length STEP step  DO
-        read(array1[i])
+    FOR i FROM 0 TO array1.length-1 STEP step  DO
+        Write('please write number')
+        Read(array1[i])
     END_FOR
-        FOR j FROM 0 TO array2.length STEP step  DO
+        FOR j FROM 0 TO array2.length-1 STEP step  DO
         read(array1[j])
     END_FOR
-FOR i FROM 0 TO array1[i] STEP step  DO
-    a=:=true;
-    FOR j FROM 0 TO array2[j] STEP step  DO
+FOR i FROM 0 TO array1[i].length-1 STEP step  DO
+    a=:true;
+    FOR j FROM 0 TO array2[j].length-1 STEP step  DO
         IF (array1[i]=array2[j]) THEN
             a:=false;
         END_IF
