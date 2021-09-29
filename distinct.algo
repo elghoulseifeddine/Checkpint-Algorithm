@@ -1,0 +1,88 @@
+// ***************************************DISTINCT-First*******************************//
+ALGORITHM sum_distinct_first_solution
+VAR
+    array1 : ARRAY_OF INTEGER[];
+    array2 : ARRAY_OF INTEGER[];
+    i:=INTEGER=0;
+    j:=INTEGER=0;
+    sum:=INTEGER=0
+    a:=BOOLEAN;
+BEGIN
+    FOR i FROM 0 TO array1.length STEP step  DO
+        read(array1[i])
+    END_FOR
+        FOR j FROM 0 TO array2.length STEP step  DO
+        read(array1[j])
+    END_FOR
+FOR i FROM 0 TO array1[i].length STEP step  DO
+    a=:=true;
+    FOR j FROM 0 TO array2[j].length STEP step  DO
+        IF (array1[i]=array2[j]) THEN
+            a:=false;
+        END_IF
+    END_FOR
+    IF (a=true) THEN
+        sum:=sum+array1[i];
+    END_IF
+END_FOR
+FOR j FROM 0 TO array2[j] STEP step  DO
+    a=:=true;
+    FOR i FROM 0 TO array1[i] STEP step  DO
+        IF (array2[j]=array1[i]) THEN
+            a:=false;
+        END_IF
+    END_FOR
+    IF (a=true) THEN
+        sum:=sum+array2[j];
+    END_IF
+END_FOR
+END
+
+// ***********************************DISTINCT-Second*******************************//
+
+ALGORITHM sum_distinct_Second_solution
+VAR
+    set_declarations
+BEGIN
+    set_instructions
+END
+
+
+// ***********************************OVERLAPPING-First*****************************//
+
+ALGORITHM sum_overlapping _first_solution
+VAR
+    array1 : ARRAY_OF INTEGER[];
+    array2 : ARRAY_OF INTEGER[];
+    i:=INTEGER=0;
+    j:=INTEGER=0;
+    sum:=INTEGER=0
+    a:=BOOLEAN;
+BEGIN
+    FOR i FROM 0 TO array1.length STEP step  DO
+        read(array1[i])
+    END_FOR
+        FOR j FROM 0 TO array2.length STEP step  DO
+        read(array1[j])
+    END_FOR
+FOR i FROM 0 TO array1[i] STEP step  DO
+    a=:=true;
+    FOR j FROM 0 TO array2[j] STEP step  DO
+        IF (array1[i]=array2[j]) THEN
+            a:=false;
+        END_IF
+    END_FOR
+    IF (a=false) THEN
+        sum:=sum+array1[i]*2;
+    END_IF
+END_FOR
+END 
+
+// *********************************** OVERLAPPING-Second********************************//
+
+ALGORITHM sum_overlapping _Second_solution
+VAR
+    set_declarations
+BEGIN
+    set_instructions
+END
