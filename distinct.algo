@@ -40,11 +40,36 @@ END
 
 // ***********************************DISTINCT-Second*******************************//
 
-ALGORITHM sum_distinct_Second_solution
+ALGORITHM sum_distinct_hashTable
 VAR
-    set_declarations
+    set_keys = ARRAY_OF INTEGER[]
+    H: HASH_TABLE<INTEGER,INTEGER>;
+    array1 : ARRAY_OF INTEGER[];
+    array2 : ARRAY_OF INTEGER[];
+    i,j,sum, count: INTEGER ;
 BEGIN
-    set_instructions
+    FOR i FROM 0 TO array1.length-1 STEP step  DO
+        count:= hash.get(array1[i]);
+        H.insert(array1[i],1);
+    END_FOR
+    FOR j FROM 0 TO array2.length-1 STEP step  DO
+        IF (H.lookup(array2[j])=true) THEN
+            count :=H.get(array2[j]);
+            H.insert(array2[j],count+1)
+        ELSE
+            H.insert (array2[j],1);
+        END_IF
+    END_FOR
+
+    set_keys = H.getKeys();
+    FOR i FROM 0 TO set_keys-1 STEP step  DO
+        IF (H.get(set_keys[i] = 1 )) THEN
+            sum = sum+ set_keys[i];
+        END_IF
+            
+    END_FOR
+
+
 END
 
 
