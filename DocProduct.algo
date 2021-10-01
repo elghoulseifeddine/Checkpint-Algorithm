@@ -1,0 +1,54 @@
+// **********************************Procedure dot-product***********************************************
+
+PROCEDURE dot_product(v1,v2)
+VAR
+    test: BOOLEAN
+BEGIN
+    IF ((v1[0]*v2[1])-(v1[1]*v2[0]) = 0) THEN
+        test= true;
+    ELSE
+        test= false;
+    END_IF
+END
+
+ALGORITHM Dot product
+VAR
+    vec1 : ARRAY_OF INTEGER[2];
+    vec2 : ARRAY_OF INTEGER[2];
+    ps: INTEGER;
+BEGIN
+    read(vec1);
+    read(vec2);
+    ps:=dot_product(vec1,vec2);
+    IF (ps=true) THEN
+        write("IR is orthogonal");
+    ELSE
+        write("IR is not orthogonal");
+    END_IF
+END
+
+// *********************************Function dot-product***************************************************
+
+FUNCTION DOT_PRODUCT(v1,v2) : STRING
+VAR
+    test: BOOLEAN
+BEGIN
+    IF ((v1[0]*v2[1])-(v1[1]*v2[0]) = 0) THEN
+        test= true;
+        RETURN "IR is orthogonal" ;
+    ELSE
+        test= false;
+        RETURN "IR is not orthogonal" ;
+    END_IF
+    
+END
+
+ALGORITHM DOT_PRODUCT
+VAR
+    vec1 : ARRAY_OF INTEGER[2];
+    vec2 : ARRAY_OF INTEGER[2];
+BEGIN
+    read(vec1);
+    read(vec2);
+    DOT_PRODUCT(vec1,vec2);
+END

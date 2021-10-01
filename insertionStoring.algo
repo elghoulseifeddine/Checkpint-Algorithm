@@ -1,0 +1,31 @@
+FUNCTION storingInsertion(unstorred) : ARRAY_OF INTEGER[];
+VAR
+    stored : ARRAY_OF INTEGER[];
+    j,x,i: INTEGER;
+BEGIN
+    stored:=unstorred[0];
+    FOR i FROM 1 TO unstorred.length-1 STEP step  DO
+        stored:=unstorred[i];
+        j:=stored.length;
+        WHILE (j>=0) DO
+            IF (stored[j]<stored[j-1]) THEN
+                x:=stored[j];
+                stored[j]:=stored[j-1];
+                stored[j-1]:=x;
+            END_IF
+            j:=j-1;
+        END_WHILE
+    END_FOR
+    RETURN stored ;
+END
+
+ALGORITHM SortingInsertion
+VAR
+    tab : ARRAY_OF INTEGER[];
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO tab.length-1 STEP step  DO
+        read (tab[i]);       
+    END_FOR
+    tab:=storingInsertion(tab);
+END
